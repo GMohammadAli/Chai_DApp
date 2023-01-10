@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import {useState, useEffect} from "react"
+import abi from './contract/chai.json';
 
 function App() {
+  const [state,setState] = useState({
+    provider: null,
+    signer:null,
+    contract: null
+  });
+
+  useEffect(() => {
+    const contractWallet = async () => {
+      const contractAddress = "";
+    }
+  })
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
     </div>
   );
 }
