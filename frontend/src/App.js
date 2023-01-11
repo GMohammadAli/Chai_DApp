@@ -2,6 +2,8 @@ import './App.css';
 import {useState, useEffect} from "react"
 import abi from './contract/chai.json';
 import { ethers } from 'hardhat';
+import Buy from './components/Buy';
+import Memos from './components/Memos';
 
 function App() {
   const [state,setState] = useState({
@@ -36,7 +38,8 @@ function App() {
   console.log(state)
   return (
     <div className="App">
-      
+      <Buy cstate={state}/>
+      <Memos />
     </div>
   );
 }
