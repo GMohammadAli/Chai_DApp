@@ -12,20 +12,73 @@ const Memos = ({ state }) => {
         contract && memosMessage()
     },[contract,memos])
   return (
-    <div>
+    <>
+      <p style={{ textAlign: "center", marginTop: "20px" }}>Messages</p>
       {memos.map((memo) => {
-        return(
-            <table>
-                <tbody>
-                    <tr>
-                        <td>{memo.name}</td>
-                        <td>{memo.message}</td>
-                    </tr>
-                </tbody>
+        return (
+          <div
+            className="container-fluid"
+            style={{ width: "100%" }}
+            key={Math.random()}
+          >
+            <table
+              style={{
+                marginBottom: "10px",
+              }}
+            >
+              <tbody>
+                <tr>
+                  <td
+                    style={{
+                      backgroundColor: "#96D4D4",
+                      border: "1px solid white",
+                      borderCollapse: "collapse",
+                      padding: "7px",
+                      width: "100px",
+                    }}
+                  >
+                    {memo.name}
+                  </td>
+                  <td
+                    style={{
+                      backgroundColor: "#96D4D4",
+                      border: "1px solid white",
+                      borderCollapse: "collapse",
+                      padding: "7px",
+                      width: "800px",
+                    }}
+                  >
+                    {new Date(memo.timestamp * 1000).toLocaleString()}
+                  </td>
+                  <td
+                    style={{
+                      backgroundColor: "#96D4D4",
+                      border: "1px solid white",
+                      borderCollapse: "collapse",
+                      padding: "7px",
+                      width: "300px",
+                    }}
+                  >
+                    {memo.message}
+                  </td>
+                  <td
+                    style={{
+                      backgroundColor: "#96D4D4",
+                      border: "1px solid white",
+                      borderCollapse: "collapse",
+                      padding: "7px",
+                      width: "400px",
+                    }}
+                  >
+                    {memo.from}
+                  </td>
+                </tr>
+              </tbody>
             </table>
-        )
+          </div>
+        );
       })}
-    </div>
+    </>
   );
 }
 

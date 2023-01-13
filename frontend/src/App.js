@@ -4,6 +4,7 @@ import abi from "./contract/chai.json";
 import { ethers } from "ethers";
 import Buy from "./components/Buy";
 import Memos from "./components/Memos";
+import chai from "./Images/chai.png"
 
 function App() {
   const [state, setState] = useState({
@@ -58,9 +59,18 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <Buy state={state} />
-      <Memos state={state} />
+    <div style={{ backgroundColor: "#EFEFEF", height: "100%" }}>
+      <img src={chai} className="img-fluid" alt=".." width="100%" />
+      <p
+        class="text-muted lead "
+        style={{ marginTop: "10px", marginLeft: "5px" }}
+      >
+        <small>Connected Account - {account}</small>
+      </p>
+      <div className="container">
+        <Buy state={state} />
+        <Memos state={state} />
+      </div>
     </div>
   );
 }
