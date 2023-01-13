@@ -26,10 +26,12 @@ function App() {
             method: "eth_requestAccounts",
           });
 
+
+          //Reloads the browser
           window.ethereum.on("chainChanged", () => {
             window.location.reload();
           });
-
+          //Reloads the browser
           window.ethereum.on("accountsChanged", () => {
             window.location.reload();
           });
